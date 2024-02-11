@@ -9,4 +9,15 @@ public class gamemanager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void quitGame()
+    {
+        Debug.Log("Quitting the game...");
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+    }
 }
